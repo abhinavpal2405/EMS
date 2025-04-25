@@ -18,15 +18,24 @@ app.use(express.json());
 
 // Connect to MongoDB
 
+async function connectDB() {
+  try {
+    await mongoose.connect("mongodb+srv://abhinavpalcs22:Abhinav%402404@ems.zxgjrsl.mongodb.net/ems?retryWrites=true&w=majority&appName=EMS", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 10000,
+      bufferCommands: false,
+    });
 
-mongoose.connect("mongodb+srv://abhinavpalcs22:Abhinav%402404@ems.zxgjrsl.mongodb.net/ems?retryWrites=true&w=majority&appName=EMS", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 10000,  // wait 10s before timing out
-    bufferCommands: false,
-})
-.then(() => console.log('✅ Connected to MongoDB'))
-.catch(err => console.error('❌ Could not connect to MongoDB:', err));
+    console.log('✅ Connected to MongoDB');
+
+  } catch (err) {
+    console.error('❌ Could not connect to MongoDB:', err);
+    process.exit(1);
+  }
+}
+
+connectDB();
 
 // Routes
 app.use('/api/auth', authRoutes);
