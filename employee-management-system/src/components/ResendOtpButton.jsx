@@ -25,7 +25,7 @@ const ResendOtpButton = ({ email, type, onResendSuccess, onResendError }) => {
     const handleResend = async () => {
         try {
             setDisabled(true);
-            const response = await axios.post('http://localhost:8080/api/otp/send-otp', {
+            const response = await axios.post('https://ems-5low.onrender.com/api/otp/send-otp', {
                 email,
                 type
             });
