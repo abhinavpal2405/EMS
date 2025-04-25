@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/employee-management', {
+mongoose.connect('mongodb+srv://abhinavpalcs22:Abhinav%402404@ems.zxgjrsl.mongodb.net/?retryWrites=true&w=majority&appName=EMS', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
