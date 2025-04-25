@@ -22,7 +22,7 @@ const EmployeeList = ({ employees = [], refreshData }) => {
     }
 
     try {
-      const response = await axios.delete(`http://localhost:3001/api/auth/employees/${employeeId}`, {
+      const response = await axios.delete(`https://ems-5low.onrender.com/api/auth/employees/${employeeId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
 
