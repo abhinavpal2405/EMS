@@ -89,11 +89,11 @@ const EmployeeDashboard = () => {
       };
 
       const [userRes, tasksRes, leavesRes, taskStatsRes, leaveStatsRes] = await Promise.all([
-        axios.get('http://localhost:3001/api/auth/me', config),
-        axios.get('http://localhost:3001/api/tasks/my-tasks', config),
-        axios.get('http://localhost:3001/api/leaves/my-leaves', config),
-        axios.get('http://localhost:3001/api/tasks/stats', config),
-        axios.get('http://localhost:3001/api/leaves/stats', config)
+        axios.get('https://ems-5low.onrender.com/api/auth/me', config),
+        axios.get('https://ems-5low.onrender.com/api/tasks/my-tasks', config),
+        axios.get('https://ems-5low.onrender.com/api/leaves/my-leaves', config),
+        axios.get('https://ems-5low.onrender.com/api/tasks/stats', config),
+        axios.get('https://ems-5low.onrender.com/api/leaves/stats', config)
       ]);
 
       const userData = userRes.data;
