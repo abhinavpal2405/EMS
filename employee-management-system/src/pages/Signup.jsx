@@ -81,12 +81,12 @@ const Signup = () => {
         e.preventDefault();
         setIsLoading(true);
 
-        try {
-            // First, send OTP
-            await axios.post('https://ems-5low.onrender.com/api/otp/send-otp', {
-                email: formData.email,
-                type: 'signup'
-            });
+        // try {
+        //     // First, send OTP
+        //     await axios.post('https://ems-5low.onrender.com/api/otp/send-otp', {
+        //         email: formData.email,
+        //         type: 'signup'
+        //     });
             
             toast.success('Verification code sent to your email');
             setStep('otp');
