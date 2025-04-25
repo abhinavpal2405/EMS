@@ -69,7 +69,7 @@ const EmployeeDashboard = () => {
       const token = localStorage.getItem('token');
       if (!token) return;
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const res = await axios.get('http://localhost:3001/api/attendance/records', config);
+      const res = await axios.get('https://ems-5low.onrender.com/api/attendance/records', config);
       setAttendanceRecords(res.data);
     } catch (err) {
       setAttendanceRecords([]);
@@ -150,7 +150,7 @@ const EmployeeDashboard = () => {
       };
       
       await axios.post(
-        'http://localhost:3001/api/leaves',
+        'https://ems-5low.onrender.com/api/leaves',
         formattedData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -168,7 +168,7 @@ const EmployeeDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:3001/api/tasks/${taskId}/accept`,
+        `https://ems-5low.onrender.com/api/tasks/${taskId}/accept`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -182,7 +182,7 @@ const EmployeeDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:3001/api/tasks/${taskId}/status`,
+        `https://ems-5low.onrender.com/api/tasks/${taskId}/status`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -507,7 +507,7 @@ const EmployeeDashboard = () => {
     // Get fresh user data after update
     const token = localStorage.getItem('token');
     const config = { headers: { Authorization: `Bearer ${token}` } };
-    const userRes = await axios.get('http://localhost:3001/api/auth/me', config);
+    const userRes = await axios.get('https://ems-5low.onrender.com/api/auth/me', config);
     
     // Update user in AuthContext with fresh data
     if (userRes.data) {
