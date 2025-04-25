@@ -9,7 +9,7 @@ const TestConnection = () => {
     const testConnection = async () => {
       try {
         // Test basic ping endpoint
-        const response = await fetch('http://localhost:8080/ping');
+        const response = await fetch('https://ems-5low.onrender.com/ping');
         if (response.ok) {
           setConnectionStatus('Backend server is running!');
         } else {
@@ -43,11 +43,11 @@ const TestConnection = () => {
           )}
           <div className="p-4 bg-gray-100 rounded">
             <p className="font-medium">Backend URL:</p>
-            <p className="text-gray-600">http://localhost:8080</p>
+            <p className="text-gray-600">https://ems-5low.onrender.com</p>
           </div>
           <div className="p-4 bg-gray-100 rounded">
             <p className="font-medium">API Base URL:</p>
-            <p className="text-gray-600">http://localhost:8080/api</p>
+            <p className="text-gray-600">https://ems-5low.onrender.com/api</p>
           </div>
         </div>
       </div>
